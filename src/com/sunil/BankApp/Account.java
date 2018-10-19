@@ -19,7 +19,7 @@ public abstract class Account {
         return customerName;
     }
 
-    public double getBalance() {
+     double getBalance() {
         return balance;
     }
 
