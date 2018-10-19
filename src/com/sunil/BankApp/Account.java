@@ -42,7 +42,7 @@ public abstract class Account {
 
 
     public void getAccountInfo(){
-        System.out.println("Account statement"+getAccountNo()+getBalance()+getCustomerName());
+        System.out.println("Account statement. Net Balance in Account  "+getAccountNo()+ " is "+getBalance()+ " Customer Name " + getCustomerName());
     }
 
 }

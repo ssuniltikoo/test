@@ -17,7 +17,17 @@ public class TransactionClass {
 
     }
 
-   /*public  void PayBill(Account deb, Biller biller, double amount){
-            System.out.println("in pro");
-    }*/
+    public  void PayBill(Account debited, Biller biller, double amount){
+        System.out.println("Bill Payment Initiated ");
+        if(debited.getBalance() > amount){
+            debited.setBalance(debited.getBalance() - amount);
+            debited.getAccountInfo();
+            //biller.setBalance(credited.getBalance() + amount);
+
+           // credited.getAccountInfo();
+        }else {
+            System.out.println("Insuffiecient balance in ");
+            debited.getAccountInfo();
+        }
+    }
 }
