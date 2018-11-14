@@ -1,0 +1,32 @@
+<html>
+<head></head>
+<body>
+    <script>
+        function msg1(){
+
+            document.getElementById("para1").innerHTML="hello bye bye";
+        }
+
+        function msg2(){
+            document.getElementById("para1").innerHTML="ta tata gud bye";
+        }
+
+        function msg(mymessage){
+            //var temp = document.getElementById("btn1").value;
+            if(mymessage=="Message1"){
+                //document.getElementById("para").innerHTML="hello namaste";
+                msg1();
+            }else {
+                //document.getElementById("para").innerHTML="tata chalo bye";
+                msg2();
+            }
+        }
+    
+    </script>
+
+    <input type="button" id="btn1" value="Message1" onclick="msg('Message1')"/>
+    <input type="button" id = "btn2" value="Message2" onclick="msg('Message2')"/>
+    <p id="para1"></p><br>
+    <p id = "para"></p>
+</body>
+</html>

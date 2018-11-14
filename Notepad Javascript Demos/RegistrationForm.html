@@ -1,0 +1,198 @@
+<!Doctype html>
+<html>
+<head><title>Registration Form</title>
+    <script type="text/javascript">
+
+        function validateForm(){
+            ValidateEmpID();
+            ValidateEmpName();
+            ValidateMarks();
+            return true;
+        }
+
+        function showValues(){
+                var domain = document.getElementById("domain").value
+                if(domain =="J2EE" ){
+                    var module = document.getElementById("module");
+                    var len = module.length;
+                    for(var i = 1;i<len;i++){
+                        module.remove(1);
+                    }
+
+                    var opt = document.createElement("option");
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="Spring";
+                    opt.text="Spring";                    
+                    var mod = document.getElementById("module")
+                    mod.appendChild(opt);  
+
+                    var opt = document.createElement("option");
+                    
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="Core Java";
+                    opt.text="Core Java";
+                    var mod = document.getElementById("module")
+                    mod.appendChild(opt);
+
+                    var opt = document.createElement("option");
+                    
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="Servlet JSP";
+                    opt.text="Servlet JSP";
+                    var mod = document.getElementById("module")
+                    mod.appendChild(opt);
+                }else if(domain=".NET"){
+                    var module = document.getElementById("module");
+                    var len = module.length;
+                    for(var i = 1;i<len;i++){
+                        module.remove(1);
+                    }
+
+                    var opt = document.createElement("option");
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="C#";
+                    opt.text="c#";
+                    var modElemnt = document.getElementById("module");
+                    modElemnt.appendChild(opt);
+                    var opt = document.createElement("option");
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="ADO.NET";
+                    opt.text="ADO.NET";    
+                    modElemnt.appendChild(opt); 
+                    var opt = document.createElement("option");   
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="ASP.NET";
+                    opt.text="ASP.NET";    
+                    modElemnt.appendChild(opt);                        
+                }                
+        }
+    function ValidateEmpID(){
+        var empid = document.getElementById("empid").value;
+        if(empid.length!=6){
+            document.getElementById("p_id").innerHTML="<h6> Emp id should be equal to 6 characters</h6>";
+            return false;
+        }
+    }
+
+    function ValidateEmpName(){
+        var empName = document.getElementById("empName").value;
+        if(empName.length >5 ){
+            document.getElementById("p_name").innerHTML=" Emp Name cannnot be more than 30 characters";
+            return false;
+        }
+    }
+
+    function ValidateMarks(){
+        var MTP_marks = Number(document.getElementById("mpt_marks").value);
+        var mtt_marks = Number(document.getElementById("mtt_marks").value);
+        var marks = Number(document.getElementById("marks").value);
+        
+        if(MTP_marks>0 && mtt_marks >0 && marks >0 ){
+            window.alert(100);
+        }else{
+            window.alert("marks shoud be pos numbers");
+            return false;
+        }
+    }
+
+    </script>
+    
+    
+</head>
+<body>
+    <table  border ="1 " width="100%" height ="100%">
+        
+    
+                <tr>
+                    <td>
+
+                    </td>
+                    <td border="3">                        
+                            <form name="frmRegistration" id ="frmR" method="Post" >
+                                <table border="2">
+                                       <tr>
+                                           <td>
+                                                <label>Enter Employee Number</label> <br>
+                                                <p id="p_id" ></p> 
+                                           </td>
+                                           <td>
+                                                <input type= "text" id="empid" name="empid">
+                                                 
+                                                <br>      
+                                           </td>
+                                       </tr> 
+                                       <tr>
+                                           <td>
+                                                <label>Enter Employee Name</label> <br>
+                                                <p id="p_name"></p>
+                                           </td>
+                                           <td>
+                                                <input type= "text" id="empName" name="empName">
+                                                <br>
+                                           </td>
+                                        </tr> 
+                                        <tr>
+                                            <td> <label>Choose Domain</label> </td>
+                                            <td><Select id="domain" onChange="showValues()">
+                                                    <option id="">Select ---Domain--</option>
+                                                    <option id="domain1">J2EE</option>
+                                                    <option id="domain12">.NET</option>
+                                                 </Select>
+                                                 <br></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Choose Module</label>   </td>
+                                            <td><Select id="module" >
+                                                    <option id="module1" name="mod1" value="default">SELECT---Module---</option>
+                                                    
+                                                 </Select></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                    <label>Enter MTP Marks </label>   
+                                            </td>
+                                            <td>
+                                                    <input type= "text" id="mpt_marks" name="mpt">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Enter MTT Marks </label>   </td>
+                                            <td><input type= "text" id="mtt_marks" name="mtt"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Enter Assignment Marks </label>   
+                                                </td>
+                                                <td><input type= "text" id="marks" name="marks"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input type="submit" id="calculate_Score" value = "Calculate Module Score" name="cal_score" onclick="ValidateMarks()" ></td>
+                                                
+                                        </tr>
+
+                                </table>                                                                  
+                             
+                            </form>
+                    </td>
+                    <td>
+
+                    </td>
+                        
+        
+                </tr>
+
+
+    
+    
+        
+
+
+    </table>
+</body>
+</html>
